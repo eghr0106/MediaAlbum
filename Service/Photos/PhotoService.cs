@@ -2,6 +2,7 @@
 using Core.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,11 +17,20 @@ namespace Service.Photos
             _webClient = webClient;
         }
 
-        public async Task<IList<Photo>> GetPhotos()
+        public async Task<IList<Photo>> GetPhotosAsync()
         {
             var albums = await _webClient.GetContent<IList<Photo>>("albums");
 
             return albums;
+        }
+
+        public async Task<IList<Photo>> GetPhotosByAlbumIdAsync(int albumId) 
+        {
+            var photos = await GetPhotosAsync();
+
+            var photosByAlbumID = photos.Where(x => x.albumId == albumId).ToList();
+
+            return photosByAlbumID;
         }
     }
 }

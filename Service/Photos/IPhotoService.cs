@@ -8,6 +8,7 @@ namespace Service.Photos
 {
     public interface IPhotoService
     {
-        Task<IList<Photo>> GetPhotos();
+        Task<IList<Photo>> GetPhotosAsync();
+        Task<IList<Photo>> GetPhotosByAlbumIdAsync(int albumId);
     }
 }

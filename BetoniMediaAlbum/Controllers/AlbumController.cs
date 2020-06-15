@@ -21,7 +21,7 @@ namespace BetoniMediaAlbum.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var albums = await _albumService.GetAlbums();
+            var albums = await _albumService.GetAlbumsAsync();
 
             return Ok(albums);
         }    

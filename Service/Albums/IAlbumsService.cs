@@ -8,6 +8,6 @@ namespace Service.Albums
 {
     public interface IAlbumsService
     {
-        Task<IList<Album>> GetAlbums();
+        Task<IList<Album>> GetAlbumsAsync();
     }
 }

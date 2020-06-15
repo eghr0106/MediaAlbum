@@ -22,7 +22,7 @@ namespace BetoniMediaComment.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var Comments = await _CommentService.GetComments();
+            var Comments = await _CommentService.GetCommentsAsync();
 
             return Ok(Comments);
         }

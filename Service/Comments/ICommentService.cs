@@ -8,6 +8,7 @@ namespace Service.Comments
 {
     public interface ICommentService
     {
-        Task<IList<Comment>> GetComments();
+        Task<IList<Comment>> GetCommentsAsync();
+        Task<IList<Comment>> GetCommentsByPhotoAsync(int photoId);
     }
 }

@@ -17,7 +17,7 @@ namespace Service.Albums
             _webClient = webClient;
         }
 
-        public async Task<IList<Album>>GetAlbums() 
+        public async Task<IList<Album>>GetAlbumsAsync() 
         {
            var albums = await _webClient.GetContent<IList<Album>>("albums");
 

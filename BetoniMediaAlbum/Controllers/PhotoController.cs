@@ -22,7 +22,7 @@ namespace BetoniMediaphoto.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var photos = await _photoService.GetPhotos();
+            var photos = await _photoService.GetPhotosAsync();
 
             return Ok(photos);
         }
