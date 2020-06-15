@@ -1,6 +1,6 @@
 Hi,
 
-Please, to run this project follow the instructions below:
+To run this project follow the instructions below:
 
 1 - Run the Net.Core solution
 
