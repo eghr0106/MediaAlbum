@@ -26,5 +26,13 @@ namespace BetoniMediaphoto.Controllers
 
             return Ok(photos);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var photos = await _photoService.GetPhotosByAlbumIdAsync(id);
+
+            return Ok(photos);
+        }
     }
 }

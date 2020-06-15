@@ -36,6 +36,16 @@ namespace BetoniMediaAlbum
             services.AddTransient<IAlbumsService, AlbumService>();
             services.AddTransient<ICommentService, CommentService>();
             services.AddTransient<IPhotoService, PhotoService>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                   builder => builder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                  );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +59,10 @@ namespace BetoniMediaAlbum
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

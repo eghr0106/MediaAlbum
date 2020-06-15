@@ -19,7 +19,7 @@ namespace Service.Comments
 
         public async Task<IList<Comment>> GetCommentsAsync()
         {
-            var albums = await _webClient.GetContent<IList<Comment>>("albums");
+            var albums = await _webClient.GetContent<IList<Comment>>("comments");
 
             return albums;
         }

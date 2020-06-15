@@ -19,7 +19,7 @@ namespace Service.Photos
 
         public async Task<IList<Photo>> GetPhotosAsync()
         {
-            var albums = await _webClient.GetContent<IList<Photo>>("albums");
+            var albums = await _webClient.GetContent<IList<Photo>>("photos");
 
             return albums;
         }

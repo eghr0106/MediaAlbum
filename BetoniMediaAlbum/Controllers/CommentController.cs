@@ -26,5 +26,13 @@ namespace BetoniMediaComment.Controllers
 
             return Ok(Comments);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var photos = await _CommentService.GetCommentsByPhotoAsync(id);
+
+            return Ok(photos);
+        }
     }
 }

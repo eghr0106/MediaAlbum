@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Service.Albums;
 
@@ -9,6 +10,7 @@ namespace BetoniMediaAlbum.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors]
     public class AlbumController : ControllerBase
     {
         private readonly IAlbumsService _albumService; 
@@ -24,6 +26,6 @@ namespace BetoniMediaAlbum.Controllers
             var albums = await _albumService.GetAlbumsAsync();
 
             return Ok(albums);
-        }    
+        }
     }
 }
